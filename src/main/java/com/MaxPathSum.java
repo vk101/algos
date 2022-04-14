@@ -1,6 +1,5 @@
 package com;
 
-import com.MorrisInorderTraversal.Node;
 
 public class MaxPathSum {
 

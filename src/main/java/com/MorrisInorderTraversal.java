@@ -39,7 +39,6 @@ public class MorrisInorderTraversal {
 	static void traversal(Node root) {
 		
 		Node curr = root;
-		Node prev = null;
 		
 		while(curr != null) {
 			if (curr.left != null) {
@@ -53,13 +52,11 @@ public class MorrisInorderTraversal {
 				if(t.right == curr) {
 					System.out.print(curr.data + " ");
 					t.right = null;
-					prev = curr;
 					curr = curr.right;
 				}
 				else {
 					//create right pointer from the right most node to the current, which will be the successor
 					t.right = curr;
-					prev = curr;
 					curr = curr.left;
 				}
 			}
@@ -67,7 +64,6 @@ public class MorrisInorderTraversal {
 			else if(curr.left == null) {
 				System.out.print(curr.data + " ");
 				if(curr.right != null) {
-					prev = curr;
 					curr = curr.right;
 				}
 			}
