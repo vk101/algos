@@ -24,6 +24,13 @@ class Solution:
     #
     # This implementation is doing the same thing, but with weights instead of actual values, so that
     # lower and upper bound is 0 to 1
+    # [0.2, 0.3, 0.5]
+    # Since this is weight, there is no need to spread it.
+    # Prefix sum is taken to define bounds:
+    #   [0.2, 0.5, 1]
+    #   0<n<=0.2,   return index 0
+    #   0.2<n<=0.5, return index 1 
+    #   0.5<n<=1,   return index 2
     #
     def __init__(self, w: List[int]):
         total = sum(w)
